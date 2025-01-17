@@ -14,7 +14,9 @@ amazon-review-analysis/
 │   └── README.md
 │   └── Compiled_Reviews.txt
 └── output/
-    └── README.md
+│    └── README.md
+└── refs/
+
 ```
 
 ## Features
