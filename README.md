@@ -39,7 +39,7 @@ amazon-review-analysis/
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/amazon-review-analysis.git
+git clone https://github.com/Weijia221B/lela60331_assign1.git
 cd amazon-review-analysis
 ```
 
@@ -48,13 +48,13 @@ cd amazon-review-analysis
 For Windows:
 ```
 python -m venv venv
-venv\Scripts\activate
+amazon_analysis\Scripts\activate.bat
 ```
 
 For Linux/Mac:
 ```
-python -m venv venv
-source venv/bin/activate
+python -m venv amazon_analysis
+source amazon_analysis/bin/activate
 ```
 
 3. Install dependencies:
@@ -83,12 +83,22 @@ mv Compiled_Reviews.txt data/
 
 Run:
 ```
+# using sigmoid
 python src/main.py \
---data_path data/Compiled_Reviews.txt \
---task helpfulness \
---learning_rate 0.01 \
---n_iters 2500 \
---plot_loss
+    --data_path data/Compiled_Reviews.txt \
+    --task sentiment \
+    --use_sigmoid \
+    --learning_rate 0.01 \
+    --n_iters 2500 \
+    --plot_loss \
+
+# using softmax
+python src/main.py \
+    --data_path data/Compiled_Reviews.txt \
+    --task sentiment \
+    --learning_rate 0.01 \
+    --n_iters 2500 \
+    --plot_loss
 ```
 
 ### 2. Helpfulness Classification (Reproducing Original Results)
@@ -100,19 +110,20 @@ python src/main.py \
 --task helpfulness \
 --learning_rate 0.01 \
 --n_iters 2500 \
---plot_loss
+--plot_loss \
+--embeddings_cache_dir data
 ```
 
 ### 3. Save Word Embeddings
 
 To save generated word embeddings for later use:
 ```
-bash
 python src/main.py \
 --data_path data/Compiled_Reviews.txt \
 --task helpfulness \
 --save_embeddings \
---output_dir output
+--output_dir output \
+--embeddings_cache_dir data # re-use saved word embeddings
 ```
 
 
@@ -127,6 +138,7 @@ python src/main.py \
 - `--plot_loss`: Whether to plot and save loss curve
 - `--save_embeddings`: Whether to save generated embeddings
 - `--output_dir`: Output directory (default: 'output')
+- `--embeddings_cache_dir`: directory for saving word embeddings(avoid repetive processing)
 
 ## Output Files
 
