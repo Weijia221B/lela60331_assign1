@@ -1,6 +1,21 @@
 # LELA60331_assign1 - Amazon Review Analysis
 This project implements an Amazon review analysis system based on logistic regression that performs two tasks: sentiment analysis and helpfulness classification.
 
+## Project Structure
+```
+amazon-review-analysis/
+├── README.md
+├── requirements.txt
+├── src/
+│   ├── preprocess.py
+│   ├── model.py 
+│   └── main.py
+├── data/
+│   └── README.md
+│   └── Compiled_Reviews.txt
+└── output/
+    └── README.md
+```
 
 ## Features
 
@@ -46,7 +61,7 @@ pip install -r requirements.txt
 ```
 
 
-## Data Preparation
+## Data Preparation (Optional, you can directly use Compiled_Reviews.txt saved in data/)
 
 1. Download the dataset:
 ```
@@ -113,8 +128,21 @@ python src/main.py \
 
 ## Output Files
 
-1. `loss_curve.png`: Training loss curve
-2. `output/embeddings.npy`: Generated embeddings (if --save_embeddings is used)
+All output files are saved in the specified output directory (default: 'output/'):
+
+1. `loss_curve.png`: Training loss curve visualization
+2. `embeddings.npy`: Generated word embeddings (if --save_embeddings is used)
+3. `metrics.json`: Detailed evaluation metrics for each class
+4. `model_weights.npy`: Trained model weights
+
+## Example Output Structure
+```
+output/
+├── loss_curve.png
+├── embeddings.npy
+├── metrics.json
+└── model_weights.npy
+```
 
 ## Result Reproduction Guide
 
