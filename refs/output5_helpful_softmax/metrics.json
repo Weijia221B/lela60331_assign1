@@ -1,0 +1,19 @@
+{
+    "accuracy": 0.5549322752770557,
+    "unhelpful": {
+        "precision": 0,
+        "recall": 0.0
+    },
+    "neutral": {
+        "precision": 0.2,
+        "recall": 0.0009420631182289214
+    },
+    "helpful": {
+        "precision": 0.555418550486368,
+        "recall": 0.9987681694998768
+    },
+    "macro_avg": {
+        "precision": 0.25180618349545597,
+        "recall": 0.3332367442060353
+    }
+}
