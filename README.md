@@ -13,6 +13,7 @@ amazon-review-analysis/
 ├── data/
 │   └── README.md
 │   └── Compiled_Reviews.txt
+│   └── embeddings.npy
 └── output/
 │    └── README.md
 └── refs/
